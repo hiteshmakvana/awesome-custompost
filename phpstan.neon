@@ -1,0 +1,11 @@
+parameters:
+    level: 6
+    reportUnmatchedIgnoredErrors: false
+    paths:
+        - awesome-custompost.php
+        - src/
+    ignoreErrors:
+    scanDirectories:
+        - vendor
+    bootstrapFiles:
+        - constants.php
