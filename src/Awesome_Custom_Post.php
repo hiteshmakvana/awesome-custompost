@@ -211,6 +211,7 @@ class Awesome_Custom_Post {
   public function awesome_custompost_register_posts() : void{
 
     register_post_type( 'book', array(
+        'label' => '', // Add this to satisfy PHPStan
         'labels'             => array(
           'name'                  => _x( 'Books', 'Post type general name', 'awesome-custompost' ),
           'singular_name'         => _x( 'Book', 'Post type singular name', 'awesome-custompost' ),
@@ -237,7 +238,10 @@ class Awesome_Custom_Post {
           'items_list_navigation' => _x( 'Books list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Added in 4.4', 'awesome-custompost' ),
           'items_list'            => _x( 'Books list', 'Screen reader text for the items list heading on the post type listing screen. Added in 4.4', 'awesome-custompost' ),
         ),
+      'description'        => '',// Add this to satisfy PHPStan
       'public'             => true,
+       'hierarchical'       => false,
+      'exclude_from_search' => false,
       'publicly_queryable' => true,
       'show_ui'            => true,
       'show_in_menu'       => true,
@@ -245,9 +249,7 @@ class Awesome_Custom_Post {
       'rewrite'            => array( 'slug' => 'book' ),
       'capability_type'    => 'post',
       'has_archive'        => true,
-      'hierarchical'       => false,
-      'menu_position'      => null,
-      'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+      'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
     )
     );
   }
