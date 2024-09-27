@@ -18,7 +18,8 @@
         "yoast/phpunit-polyfills": "^1.0",
         "php-stubs/wp-cli-stubs": "^2",
         "wp-cli/wp-cli": "^2",
-        "wp-coding-standards/wpcs": "^3.1"
+        "wp-coding-standards/wpcs": "^3.1",
+
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
@@ -81,6 +82,7 @@
         }
     },
     "require": {
-        "php": ">=8.0"
+        "php": ">=8.0",
+        "johnbillion/extended-cpts": "^5.0"
     }
 }

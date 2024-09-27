@@ -215,48 +215,17 @@ class Awesome_Custom_Post {
 	 */
 	public function awesome_custompost_register_posts(): void {
 
-		register_post_type(
-			'book',
+		register_extended_post_type(
+			'awesomes',
 			array(
-				'label'               => '', // Add this to satisfy PHPStan
-				'labels'              => array(
-					'name'                  => _x( 'Books', 'Post type general name', 'awesome-custompost' ),
-					'singular_name'         => _x( 'Book', 'Post type singular name', 'awesome-custompost' ),
-					'menu_name'             => _x( 'Books', 'Admin Menu text', 'awesome-custompost' ),
-					'name_admin_bar'        => _x( 'Book', 'Add New on Toolbar', 'awesome-custompost' ),
-					'add_new'               => __( 'Add New', 'awesome-custompost' ),
-					'add_new_item'          => __( 'Add New Book', 'awesome-custompost' ),
-					'new_item'              => __( 'New Book', 'awesome-custompost' ),
-					'edit_item'             => __( 'Edit Book', 'awesome-custompost' ),
-					'view_item'             => __( 'View Book', 'awesome-custompost' ),
-					'all_items'             => __( 'All Books', 'awesome-custompost' ),
-					'search_items'          => __( 'Search Books', 'awesome-custompost' ),
-					'parent_item_colon'     => __( 'Parent Books:', 'awesome-custompost' ),
-					'not_found'             => __( 'No books found.', 'awesome-custompost' ),
-					'not_found_in_trash'    => __( 'No books found in Trash.', 'awesome-custompost' ),
-					'featured_image'        => _x( 'Book Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'awesome-custompost' ),
-					'set_featured_image'    => _x( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'awesome-custompost' ),
-					'remove_featured_image' => _x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'awesome-custompost' ),
-					'use_featured_image'    => _x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'awesome-custompost' ),
-					'archives'              => _x( 'Book archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'awesome-custompost' ),
-					'insert_into_item'      => _x( 'Insert into book', 'Overrides the “Insert into post”/”Insert into page” phrase. Added in 4.4', 'awesome-custompost' ),
-					'uploaded_to_this_item' => _x( 'Uploaded to this book', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase. Added in 4.4', 'awesome-custompost' ),
-					'filter_items_list'     => _x( 'Filter books list', 'Screen reader text for the filter links heading on the post type listing screen. Added in 4.4', 'awesome-custompost' ),
-					'items_list_navigation' => _x( 'Books list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Added in 4.4', 'awesome-custompost' ),
-					'items_list'            => _x( 'Books list', 'Screen reader text for the items list heading on the post type listing screen. Added in 4.4', 'awesome-custompost' ),
+				'archive' => array(
+					'nopaging' => true,
 				),
-				'description'         => '', // Add this to satisfy PHPStan
-				'public'              => true,
-				'hierarchical'        => false,
-				'exclude_from_search' => false,
-				'publicly_queryable'  => true,
-				'show_ui'             => true,
-				'show_in_menu'        => true,
-				'query_var'           => true,
-				'rewrite'             => array( 'slug' => 'book' ),
-				'capability_type'     => 'post',
-				'has_archive'         => true,
-				'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+			),
+			array(
+				'singular' => __( 'Awesome', 'awesome-custompost' ),
+				'plural'   => __( 'Awesomes', 'awesome-custompost' ),
+				'slug'     => 'awesomes',
 			)
 		);
 	}
